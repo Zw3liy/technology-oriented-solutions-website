@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="620"
+     height="170"
+     viewBox="0 0 620 170"
+     role="img"
+     aria-labelledby="title description">
+  <title id="title">TOS</title>
+  <desc id="description">
+    Technology Oriented Solutions mouse-inspired technology logo
+  </desc>
+
+  <defs>
+    <linearGradient id="tosGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(8 12)">
+    <path d="M65 10
+             C30 10 10 38 10 75
+             C10 116 34 146 70 146
+             C106 146 130 116 130 75
+             C130 38 104 10 65 10Z"
+          fill="none"
+          stroke="url(#tosGradient)"
+          stroke-width="10"/>
+
+    <path d="M70 14V63"
+          stroke="#2dd4bf"
+          stroke-width="8"
+          stroke-linecap="round"/>
+
+    <rect x="61" y="31"
+          width="18"
+          height="31"
+          rx="9"
+          fill="#ffffff"/>
+
+    <path d="M17 84H0M123 84H140M30 126L17 141M110 126L123 141"
+          stroke="#2dd4bf"
+          stroke-width="7"
+          stroke-linecap="round"/>
+
+    <circle cx="0" cy="84" r="6" fill="#2dd4bf"/>
+    <circle cx="140" cy="84" r="6" fill="#2dd4bf"/>
+    <circle cx="17" cy="141" r="6" fill="#2dd4bf"/>
+    <circle cx="123" cy="141" r="6" fill="#2dd4bf"/>
+  </g>
+
+  <text x="175"
+        y="91"
+        fill="#ffffff"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="82"
+        font-weight="800"
+        letter-spacing="5">TOS</text>
+
+  <text x="179"
+        y="127"
+        fill="#8ee8dc"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="20"
+        font-weight="700"
+        letter-spacing="2">
+    TECHNOLOGY ORIENTED SOLUTIONS
+  </text>
+</svg>
