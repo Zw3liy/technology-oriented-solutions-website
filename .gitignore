@@ -1,2 +1,7 @@
 # Local Netlify folder
 .netlify
+.netlify/
+.env
+.env.*
+node_modules/
+lighthouse-reports/
