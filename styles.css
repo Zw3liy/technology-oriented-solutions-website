@@ -1154,3 +1154,111 @@ stretch; padding: 18px 20px; background: var(--navy); }
   }
 }
 /* PORTFOLIO STORIES END */
+
+/* ABOUT BACKGROUND START */
+.about-background-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 760px;
+  background: #dfeaed;
+}
+
+.about-background-section::before {
+  position: absolute;
+  z-index: -2;
+  inset: -24px;
+  content: "";
+  background-image:
+    url("assets/about/about-tos.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1.035);
+}
+
+.about-background-section::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(
+      110deg,
+      rgba(238, 248, 249, 0.94) 0%,
+      rgba(247, 250, 252, 0.86) 55%,
+      rgba(223, 247, 243, 0.80) 100%
+    );
+}
+
+.about-background-section .content-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.about-background-section .prose {
+  padding: clamp(26px, 4vw, 44px);
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 22px 50px rgba(11, 36, 56, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.about-background-section .prose .lead {
+  padding-left: 18px;
+  border-left: 4px solid var(--teal);
+  color: var(--navy);
+}
+
+.about-background-section .prose h2 {
+  color: var(--navy);
+}
+
+.about-background-section .prose p {
+  color: #344c5d;
+}
+
+.about-background-section .info-panel {
+  border-color: rgba(255, 255, 255, 0.68);
+  background: rgba(247, 250, 252, 0.86);
+  box-shadow:
+    0 22px 50px rgba(11, 36, 56, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.about-background-section .check-list li {
+  padding: 8px 0;
+}
+
+@media (max-width: 820px) {
+  .about-background-section::before {
+    background-position: 60% center;
+  }
+}
+
+@media (max-width: 620px) {
+  .about-background-section {
+    min-height: auto;
+  }
+
+  .about-background-section::before {
+    filter: blur(3px);
+  }
+
+  .about-background-section .prose {
+    padding: 24px;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .about-background-section .prose,
+  .about-background-section .info-panel {
+    background: #ffffff;
+    backdrop-filter: none;
+  }
+}
+/* ABOUT BACKGROUND END */
