@@ -453,20 +453,3 @@ stretch; padding: 18px 20px; background: var(--navy); }
   z-index: 1;
 }
 /* TOS HOME BACKGROUND END */
-
-/* SERVICES HEADER LOGO SIZE */
-body .site-header .brand img {
-  display: block !important;
-  width: 180px !important;
-  height: auto !important;
-  max-width: 45vw !important;
-  max-height: 52px !important;
-  object-fit: contain !important;
-}
-
-@media (max-width: 700px) {
-  body .site-header .brand img {
-    width: 145px !important;
-    max-height: 42px !important;
-  }
-}
