@@ -623,3 +623,44 @@ stretch; padding: 18px 20px; background: var(--navy); }
   }
 }
 /* TOS SERVICES PAGE END */
+
+/* TOS HEADER LOGO FIX START */
+.site-header .brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  width: auto;
+  max-width: min(280px, 58vw);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.site-header .brand img {
+  display: block;
+  width: auto !important;
+  max-width: 100% !important;
+  height: 48px !important;
+  max-height: 48px !important;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.site-header .nav-wrap {
+  min-height: 76px;
+}
+
+@media (max-width: 700px) {
+  .site-header .brand {
+    max-width: 190px;
+  }
+
+  .site-header .brand img {
+    height: 39px !important;
+    max-height: 39px !important;
+  }
+
+  .site-header .nav-wrap {
+    min-height: 66px;
+  }
+}
+/* TOS HEADER LOGO FIX END */
