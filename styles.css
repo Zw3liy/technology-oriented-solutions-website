@@ -848,3 +848,122 @@ stretch; padding: 18px 20px; background: var(--navy); }
     transform: none;
   }
 }
+
+/* PORTFOLIO ROW VISUALS START */
+#solutions .solution-list .portfolio-row {
+  grid-template-columns:
+    176px
+    minmax(180px, 0.8fr)
+    minmax(260px, 1.35fr)
+    auto;
+  align-items: center;
+}
+
+.portfolio-row-visual {
+  position: relative;
+  width: 176px;
+  height: 116px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 14px;
+  background: #e8f1f4;
+  box-shadow:
+    0 12px 25px rgba(11, 36, 56, 0.13);
+}
+
+.portfolio-row-visual::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16),
+      transparent 45%,
+      rgba(7, 26, 41, 0.15)
+    );
+}
+
+.portfolio-row-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.portfolio-row:hover .portfolio-row-visual img {
+  transform: scale(1.065);
+  filter: saturate(1.07) contrast(1.03);
+}
+
+.js .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.js .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+@media (max-width: 900px) {
+  #solutions .solution-list .portfolio-row {
+    grid-template-columns: 142px 1fr;
+  }
+
+  .portfolio-row-visual {
+    grid-row: span 2;
+    width: 142px;
+    height: 104px;
+  }
+
+  #solutions .portfolio-row > p {
+    grid-column: 2;
+  }
+
+  #solutions .portfolio-row > span {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  #solutions .solution-list .portfolio-row {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .portfolio-row-visual {
+    grid-row: auto;
+    width: 104px;
+    height: 88px;
+    border-radius: 12px;
+  }
+
+  #solutions .portfolio-row > p,
+  #solutions .portfolio-row > span {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-row-visual img,
+  .js .reveal-on-scroll,
+  .js .reveal-on-scroll.is-visible {
+    transition: none;
+    transform: none;
+  }
+
+  .js .reveal-on-scroll {
+    opacity: 1;
+  }
+}
+/* PORTFOLIO ROW VISUALS END */

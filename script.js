@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
 
@@ -47,3 +49,33 @@ serviceCards.forEach((card) => {
     });
 });
 
+// PORTFOLIO REVEAL ANIMATION
+const portfolioRows = document.querySelectorAll(
+    '.reveal-on-scroll'
+);
+
+if ('IntersectionObserver' in window) {
+    const portfolioObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.14,
+        }
+    );
+
+    portfolioRows.forEach((row) => {
+        portfolioObserver.observe(row);
+    });
+} else {
+    portfolioRows.forEach((row) => {
+        row.classList.add('is-visible');
+    });
+}
