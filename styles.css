@@ -635,66 +635,90 @@ stretch; padding: 18px 20px; background: var(--navy); }
   background: #e8f1f4;
   box-shadow: 0 10px 24px rgba(11, 36, 56, 0.13);
 }
-
 .service-visual-frame::after {
   position: absolute;
   inset: 0;
   content: "";
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    transparent 55%,
-    rgba(7, 26, 41, 0.16)
-  );
+  background: linear-gradient(180deg, transparent 55%, rgba(7, 26, 41, 0.16));
 }
-
 .service-visual {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
+  transition: transform .3s ease, filter .3s ease;
 }
-
 .service-card:hover .service-visual,
 .service-card[open] .service-visual {
   transform: scale(1.08);
   filter: saturate(1.06) contrast(1.04);
 }
-
 .service-card[open] .service-visual-frame {
   width: 120px;
   height: 120px;
 }
-
 .service-card summary h3 {
   margin-top: 8px;
 }
-
 @media (max-width: 620px) {
   .service-visual-frame {
     width: 88px;
     height: 88px;
     border-radius: 18px;
   }
-
   .service-card[open] .service-visual-frame {
     width: 104px;
     height: 104px;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
-  .service-visual {
-    transition: none;
-  }
-
+  .service-visual { transition: none; }
   .service-card:hover .service-visual,
-  .service-card[open] .service-visual {
-    transform: none;
-  }
+  .service-card[open] .service-visual { transform: none; }
 }
 /* SERVICE VISUALS END */
+
+
+/* SERVICE EXPLANATION CONTENT */
+.service-explanation {
+  max-width: 840px;
+}
+.service-explanation h4 {
+  margin: 26px 0 8px;
+  color: var(--navy);
+  font-size: 1.08rem;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+}
+.service-explanation h4:first-child {
+  margin-top: 24px;
+}
+.service-explanation p {
+  margin: 0;
+}
+.service-explanation ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 28px;
+  margin: 10px 0 0;
+}
+.service-outcome {
+  margin-top: 28px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--teal);
+  border-radius: 0 12px 12px 0;
+  background: var(--mint);
+}
+.service-outcome h4 {
+  margin-top: 0;
+}
+.service-outcome p {
+  color: var(--navy-2);
+}
+@media (max-width: 620px) {
+  .service-explanation ul {
+    grid-template-columns: 1fr;
+  }
+}
+
