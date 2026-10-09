@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://technologyorientedsolutions.netlify.app/sitemap.xml
+Sitemap: https://technology-oriented-solutions-website.pages.dev/sitemap.xml
