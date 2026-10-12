@@ -79,3 +79,51 @@ if ('IntersectionObserver' in window) {
         row.classList.add('is-visible');
     });
 }
+
+
+// Progressive enhancement: the HTML action also works without JavaScript.
+const enquiryForm = document.querySelector('#demo-request');
+if (enquiryForm) {
+    const status = document.querySelector('#enquiry-status');
+    const submit = enquiryForm.querySelector('button[type="submit"]');
+    let sending = false;
+    enquiryForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (sending || !enquiryForm.reportValidity()) return;
+        sending = true;
+        submit.disabled = true;
+        submit.textContent = 'Sending…';
+        enquiryForm.setAttribute('aria-busy', 'true');
+        status.dataset.state = 'pending';
+        status.textContent = 'Sending your enquiry…';
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 30000);
+        try {
+            const response = await fetch(enquiryForm.action, {
+                method: 'POST',
+                body: new FormData(enquiryForm),
+                headers: { Accept: 'application/json' },
+                signal: controller.signal,
+            });
+            if (!response.ok) {
+                status.dataset.state = 'error';
+                status.textContent = response.status === 429
+                    ? 'Too many requests. Please wait before trying again, or email technologyorientedsolutions@pm.me. Your details are still here.'
+                    : 'Your enquiry could not be submitted. Please try again or email technologyorientedsolutions@pm.me. Your details are still here.';
+            } else {
+                status.dataset.state = 'success';
+                status.textContent = 'Thank you. Your enquiry has been submitted to TOS. We will respond using the email address you provided.';
+                enquiryForm.reset();
+            }
+        } catch {
+            status.dataset.state = 'error';
+            status.textContent = 'We could not confirm submission. Your details are still here. Please check your connection or email technologyorientedsolutions@pm.me.';
+        } finally {
+            clearTimeout(timeout);
+            sending = false;
+            submit.disabled = false;
+            submit.textContent = 'Send request';
+            enquiryForm.removeAttribute('aria-busy');
+        }
+    });
+}
