@@ -13,8 +13,8 @@
   <meta property="og:url" content="https://technology-oriented-solutions-website.pages.dev/">
   <link rel="canonical" href="https://technology-oriented-solutions-website.pages.dev/">
   <link rel="icon" href="assets/tos-3d-mouse-logo.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=portfolio-compact-1">
-  <script src="script.js?v=portfolio-compact-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=formspree-20261012">
+  <script src="script.js?v=formspree-20261012" defer></script>
   <meta name="msvalidate.01" content="A60554BCEB30A113B4E43ABD515E9ACB" />
   <meta name="google-site-verification" content="dTN5jLPasTv6jQBo48ZHZcaI-FlJP0FR9L1f6sPhJ1c" />
   <script type="application/ld+json">
@@ -521,16 +521,19 @@ acceptance checks.</p></div></li>
         <div><p class="eyebrow">Start a conversation</p><h2>Request a focused demonstration</h2><p>Tell us which 
 process creates delay, duplication or customer frustration. Do not include patient records, passwords or other 
 sensitive information.</p></div>
-        <form name="demo-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="demo-request">
-          <p class="hidden"><label>Do not fill this in <input name="bot-field"></label></p>
+        <form id="demo-request" name="demo-request" action="https://formspree.io/f/myekpvly" method="POST" aria-describedby="enquiry-help enquiry-status">
+          <input type="hidden" name="subject" value="TOS website enquiry">
+          <p class="hidden"><label>Do not fill this in <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
           <label>Name<input type="text" name="name" autocomplete="name" required></label>
           <label>Email<input type="email" name="email" autocomplete="email" required></label>
           <label>Organisation<input type="text" name="organisation" autocomplete="organization"></label>
           <label>Problem to solve<textarea name="message" rows="5" required></textarea></label>
           <label class="consent"><input type="checkbox" name="contact-consent" required> I agree that TOS 
 may use these details to respond to this enquiry.</label>
+          <p id="enquiry-help">Your enquiry is processed by Formspree and sent to TOS. <a href="privacy.html">Privacy notice</a>.</p>
           <button class="button primary" type="submit">Send request</button>
+          <p id="enquiry-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+          <p>If you need another way to contact us, email <a href="mailto:technologyorientedsolutions@pm.me">technologyorientedsolutions@pm.me</a>.</p>
         </form>
       </div>
 
