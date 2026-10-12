@@ -1262,3 +1262,11 @@ stretch; padding: 18px 20px; background: var(--navy); }
   }
 }
 /* ABOUT BACKGROUND END */
+
+/* Accessible enquiry feedback */
+#enquiry-status:empty { display: none; }
+#enquiry-status { padding: 1rem; border-radius: .5rem; overflow-wrap: anywhere; }
+#enquiry-status[data-state="pending"] { background: #eef4fa; color: #16344a; }
+#enquiry-status[data-state="success"] { background: #e7f6ed; color: #14532d; }
+#enquiry-status[data-state="error"] { background: #fff0ef; color: #8b1d18; }
+#demo-request button:disabled { opacity: .65; cursor: wait; }
